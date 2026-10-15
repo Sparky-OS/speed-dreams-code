@@ -124,8 +124,10 @@ void GfglFeatures::detectStandardSupport()
     _mapSupportedBool[TextureNonPowerOf2] =
             SDL_GL_ExtensionSupported("GL_ARB_texture_non_power_of_two");
 
-	// 9) Stereo Vision (need a proper check)
-	_mapSupportedBool[StereoVision] = false;
+	// 9) Stereo Vision.
+	GLboolean bStereoVision = GL_FALSE;
+	glGetBooleanv(GL_STEREO, &bStereoVision);
+	_mapSupportedBool[StereoVision] = bStereoVision == GL_TRUE;
 
 	// 10) Bump Mapping
     bValue = SDL_GL_ExtensionSupported("GL_ARB_multitexture")
@@ -362,6 +364,7 @@ bool GfglFeatures::detectBestSupportSDL2(int& nWidth, int& nHeight, int& nDepth,
 			nDepth = nCurrDepth;
 			bFullScreen = nFullScreen ? true : false;
 			bAlpha = nAlphaChannel ? true : false;
+			bStereoVision = nStereoVision ? true : false;
 
 			SDL_GL_DeleteContext(context);
 			context = NULL;
@@ -706,6 +709,8 @@ bool GfglFeatures::checkBestSupport(int nWidth, int nHeight, int nDepth,
 						 bDetAlpha ? GFSCR_VAL_YES : GFSCR_VAL_NO);
 			GfParmSetStr(hparm, GFSCR_SECT_INTESTPROPS, GFSCR_ATT_FSCR,
 						 bDetFullScreen ? GFSCR_VAL_YES : GFSCR_VAL_NO);
+			GfParmSetStr(hparm, GFSCR_SECT_INTESTPROPS, GFSCR_ATT_STEREOVISION,
+						 bDetStereo ? GFSCR_VAL_YES : GFSCR_VAL_NO);
 
 			// But make sure they are not validated yet at restart (only next time if OK).
 			GfParmSetStr(hparm, GFSCR_SECT_INTESTPROPS, GFSCR_ATT_TESTSTATE,
