@@ -1,0 +1,6 @@
+speed-dreams (2.4.2-1+stereo3d1) unstable; urgency=medium
+
+  * Package upstream v2.4.2 with its pinned data and FreeSOLID submodules.
+  * Detect stereo capability and preserve the tested stereo request.
+
+ -- Daniel Ramos (Capitain Jack) <Capitain_Jack@yahoo.com>  Thu, 15 Oct 2026 11:35:25 +0000

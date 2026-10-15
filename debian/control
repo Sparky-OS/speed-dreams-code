@@ -1,0 +1,19 @@
+Source: speed-dreams
+Section: games
+Priority: optional
+Maintainer: Daniel Ramos (Capitain Jack) <Capitain_Jack@yahoo.com>
+Build-Depends: debhelper-compat (= 13), cmake, ninja-build, pkg-config,
+ libopenscenegraph-dev, libplib-dev, libsdl2-dev, libsdl2-mixer-dev,
+ libopenal-dev, libogg-dev, libvorbis-dev, libenet-dev, libexpat1-dev,
+ libcurl4-openssl-dev, libpng-dev, libjpeg-dev, zlib1g-dev,
+ libcjson-dev, libminizip-dev, librhash-dev, libsqlite3-dev
+Standards-Version: 4.7.3
+Homepage: https://www.speed-dreams.net/
+Rules-Requires-Root: no
+
+Package: speed-dreams
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Open racing simulator with OpenSceneGraph rendering
+ Speed Dreams provides car racing with human and robot drivers.
+ This build includes its upstream data and native quad-buffer stereo support.

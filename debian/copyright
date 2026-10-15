@@ -1,0 +1,17 @@
+Speed Dreams v2.4.2, upstream source and its pinned data and FreeSOLID.
+Source: https://forge.a-lec.org/speed-dreams/speed-dreams-code
+
+Upstream's README.md specifies GPL-2-or-later as the default code license
+and the Free Art License as the default non-functional data license.
+Individual directories and assets carry additional notices and licenses.
+These notices are retained in the source and installed data.
+The complete GPL version 2 text is installed as LICENSE alongside this file
+and is available at /usr/share/common-licenses/GPL-2.
+
+FreeSOLID is by Gino van den Bergen, as its README records, and is
+distributed under the GNU Library/Lesser General Public License.
+Its full COPYING file is retained in the source.
+
+This file is an initial upstream-based package record for local testing.
+The main session must complete the per-asset copyright inventory before
+public repository integration.

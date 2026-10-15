@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@ --buildsystem=cmake
+
+override_dh_auto_configure:
+	dh_auto_configure -- -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DOPTION_TRACKEDITOR=OFF -DSD_ASSUME_DATADIR=ON
+	cmake -S speed-dreams-data -B debian/data-build -DCMAKE_INSTALL_PREFIX=/usr
+
+override_dh_auto_install:
+	dh_auto_install --destdir=debian/tmp
+	DESTDIR=$(CURDIR)/debian/tmp cmake --install debian/data-build
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf debian/data-build
