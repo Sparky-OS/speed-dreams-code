@@ -2,3 +2,4 @@ native-stereo-capability.patch
 stereo-camera-depth.patch
 stereo-depth-defaults.patch
 stereo-camera-groups.patch
+measured-cockpit-depth.patch

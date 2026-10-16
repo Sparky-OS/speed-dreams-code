@@ -1,3 +1,10 @@
+speed-dreams (2.4.2-1+stereo3d4) unstable; urgency=medium
+
+  * Set the cockpit plane to 0.7 m after measuring panel and wheel disparity.
+  * Keep the outside plane at 2 m and separation at 0.065 m, all editable.
+
+ -- Daniel Ramos (Capitain Jack) <Capitain_Jack@yahoo.com>  Fri, 16 Oct 2026 01:12:14 +0000
+
 speed-dreams (2.4.2-1+stereo3d3) unstable; urgency=medium
 
   * Distinguish the outside cameras in the first-person camera group.
