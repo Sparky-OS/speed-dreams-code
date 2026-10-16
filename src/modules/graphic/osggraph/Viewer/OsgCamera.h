@@ -59,6 +59,7 @@ public:
     inline int getIntSelectedCamera() const { return selectedCamera; }
     inline int getIntSelectedList() const { return selectedList; }
     void selectCamera(int list, int cam);
+    void setStereoConvergence();
 
     inline void getIntSelectedListAndCamera(int *list,int *cam) const
     {
