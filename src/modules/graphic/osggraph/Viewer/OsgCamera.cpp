@@ -2544,9 +2544,9 @@ void SDCameras::setStereoConvergence()
     const bool cockpit = selectedList == 0 && selectedCamera < 4;
     double distance = GfParmGetNum(grHandle, GR_SCT_GRAPHIC,
         cockpit ? "stereo cockpit convergence" : "stereo chase convergence",
-        NULL, cockpit ? 1.2 : 2.0);
+        NULL, cockpit ? 0.7 : 2.0);
     if (!(distance > 0.0 && distance < 1.0e6))
-        distance = cockpit ? 1.2 : 2.0;
+        distance = cockpit ? 0.7 : 2.0;
     double separation = GfParmGetNum(grHandle, GR_SCT_GRAPHIC, "stereo eye separation", NULL, 0.065);
     if (!(separation > 0.0 && separation < 1.0))
         separation = 0.065;
