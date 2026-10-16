@@ -1,3 +1,18 @@
+speed-dreams (2.4.2-1+stereo3d3) unstable; urgency=medium
+
+  * Distinguish the outside cameras in the first-person camera group.
+  * Retain the installed, editable per-view stereo depth defaults.
+  * Always build the pinned bundled FreeSOLID instead of using an installed
+    earlier Speed Dreams package as an undeclared build dependency.
+
+ -- Daniel Ramos (Capitain Jack) <Capitain_Jack@yahoo.com>  Fri, 16 Oct 2026 00:48:41 +0000
+
+speed-dreams (2.4.2-1+stereo3d2) unstable; urgency=medium
+
+  * Set per-camera cockpit and chase depth defaults and eye separation.
+
+ -- Daniel Ramos (Capitain Jack) <Capitain_Jack@yahoo.com>  Fri, 16 Oct 2026 00:23:26 +0000
+
 speed-dreams (2.4.2-1+stereo3d1) unstable; urgency=medium
 
   * Package upstream v2.4.2 with its pinned data and FreeSOLID submodules.

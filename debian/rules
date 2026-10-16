@@ -5,7 +5,7 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 	dh $@ --buildsystem=cmake
 
 override_dh_auto_configure:
-	dh_auto_configure -- -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DOPTION_TRACKEDITOR=OFF -DSD_ASSUME_DATADIR=ON
+	dh_auto_configure -- -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DOPTION_TRACKEDITOR=OFF -DSD_ASSUME_DATADIR=ON -DCMAKE_DISABLE_FIND_PACKAGE_SOLID=ON
 	cmake -S speed-dreams-data -B debian/data-build -DCMAKE_INSTALL_PREFIX=/usr
 
 override_dh_auto_install:

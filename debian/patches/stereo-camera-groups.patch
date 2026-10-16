@@ -1,0 +1,15 @@
+Description: Distinguish inside cameras from chase views in the F2 group
+Author: Daniel Ramos (Capitain Jack)
+Forwarded: no
+
+--- a/src/modules/graphic/osggraph/Viewer/OsgCamera.cpp
++++ b/src/modules/graphic/osggraph/Viewer/OsgCamera.cpp
+@@ -2541,7 +2541,7 @@
+     if (!camera->getDisplaySettings())
+         camera->setDisplaySettings(new osg::DisplaySettings);
+ 
+-    const bool cockpit = selectedList == 0;
++    const bool cockpit = selectedList == 0 && selectedCamera < 4;
+     double distance = GfParmGetNum(grHandle, GR_SCT_GRAPHIC,
+         cockpit ? "stereo cockpit convergence" : "stereo chase convergence",
+         NULL, cockpit ? 1.2 : 2.0);
